@@ -1,13 +1,20 @@
 import react, {useState, useEffect} from "react";
 import './App.css';
+import Pokemon from "./routes/pokemon.js";
+import {Routes, Route} from 'react-router-dom';
+import PokeDetails from "./routes/pokedetails.js";
+import BaseInfo from "./routes/baseinfo.js";
+
 
 const cors=require("cors");
 
 function App() {
   const [pokemon, setPokemon] = useState([]);
+  const [url,setUrl]= useState("https://pokemon3.herokuapp.com/pokemon")
   useEffect(() => {
     const fetchPokemon = () =>{
-    fetch("https://pokemon3.herokuapp.com/pokemon")
+      //https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0
+    fetch(url)
       .then((res) => res.json())
       .then((data) => {
         console.log(data)
@@ -18,7 +25,13 @@ function App() {
   }, []);
   return (
     <div className="App">
-      
+     
+    <Routes>
+        <Route path="/" element={<Pokemon pokemon={pokemon} url={url}/>} />
+        <Route path="/pokemon/:id" element={<PokeDetails pokemon={pokemon}/>} />
+        <Route path="/pokemon/:id/:info" element={<BaseInfo pokemon={pokemon} url={url}/>} />
+     </Routes>
+     
     </div>
   );
 }
