@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #263238;
 }
 
 code {
@@ -23,10 +24,16 @@ li{
   border-radius: 5px;
   padding: 1em;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  background-color: beige;
 }
 .pokemon-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 2em;
+  
+}
+
+h4{
+  color:#073648;
 }
