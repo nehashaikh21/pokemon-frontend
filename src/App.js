@@ -4,6 +4,7 @@ import Pokemon from "./routes/pokemon.js";
 import {Routes, Route} from 'react-router-dom';
 import PokeDetails from "./routes/pokedetails.js";
 import BaseInfo from "./routes/baseinfo.js";
+import Landingpage from "./routes/Landingpage";
 
 
 const cors=require("cors");
@@ -27,7 +28,8 @@ function App() {
     <div className="App">
      
     <Routes>
-        <Route path="/" element={<Pokemon pokemon={pokemon} url={url}/>} />
+        <Route path="/" element={<Landingpage/>} />
+        <Route path="/pokemon" element={<Pokemon pokemon={pokemon} url={url}/>} />
         <Route path="/pokemon/:id" element={<PokeDetails pokemon={pokemon}/>} />
         <Route path="/pokemon/:id/:info" element={<BaseInfo pokemon={pokemon} url={url}/>} />
      </Routes>
