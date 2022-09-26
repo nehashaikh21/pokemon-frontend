@@ -20,11 +20,11 @@ li{
 .card {
   text-align: center;
   padding: 10px;
-  width: 300px;
+  width: 250px;
   border-radius: 5px;
   padding: 1em;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   background-color: beige;
+  align-items: center;
 }
 .pokemon-container {
   display: flex;
@@ -32,9 +32,10 @@ li{
   flex-wrap: wrap;
   gap: 2em;
   background-color: #263238;
+  align-items: center;
 }
 
-h4{
+h5{
   color:#073648;
 }
 
@@ -60,4 +61,8 @@ h4{
 .pokeball{
   margin-left: -580px;
   margin-top: -180px;
+}
+
+.search{
+  width: 40%;
 }

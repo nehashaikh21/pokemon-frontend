@@ -31,6 +31,7 @@ function App() {
         <Route path="/" element={<Landingpage/>} />
         <Route path="/pokemon" element={<Pokemon pokemon={pokemon} url={url}/>} />
         <Route path="/pokemon/:id" element={<PokeDetails pokemon={pokemon}/>} />
+        <Route path="/pokemon/:name" element={<Pokemon pokemon={pokemon}/>} />
         <Route path="/pokemon/:id/:info" element={<BaseInfo pokemon={pokemon} url={url}/>} />
      </Routes>
      
