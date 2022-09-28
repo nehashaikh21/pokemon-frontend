@@ -13,7 +13,7 @@ const Pokemon = (poke) => {
   let pokedata = [poke.pokemon].flat(2);
   const [input, setInput] = useState("");
   const [searchResult, setsearchResult] = useState(pokedata);
-
+  
   //  console.log(pokedata)
 
   const handleSearch = (e) => {
