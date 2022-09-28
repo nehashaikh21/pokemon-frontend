@@ -23,7 +23,7 @@ const Pokemon = (poke) => {
     setsearchResult(pokedata)
 
   // console.log(searchResult):
-
+  }
   return (
     <>
       <div className='pokelist'>
