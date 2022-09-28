@@ -24,10 +24,14 @@
   }
   .btn-gradient-2 {
     background: 
-    linear-gradient(rgb(122, 122, 133), rgb(149, 150, 110)) padding-box,   
-     linear-gradient(to right, rgb(132, 132, 141), rgb(222, 230, 179)) border-box;
+    /* linear-gradient(rgb(122, 122, 133), rgb(149, 150, 110)) padding-box,    */
+     linear-gradient(to right, rgb(132, 132, 141), rgb(2, 230, 158)) border-box;
     border-radius: 30em;
     width: 180x;
     border: 2px solid transparent;
+  }
+
+  Link{
+    text-decoration: none !important;
   }
   

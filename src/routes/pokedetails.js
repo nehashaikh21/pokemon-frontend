@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import { useParams } from "react-router-dom";
+
 const App = () => {
   const [pdata, setPdata] = useState(null);
   let { id } = useParams();
@@ -32,6 +33,7 @@ const App = () => {
           <h4>Defense:{pdata.base.Defense}</h4>
           <p><Link to={`/pokemon/${pdata.id}/baseinfo`}>View More</Link></p>
         </div>
+       
       )}
     </div>
   );
