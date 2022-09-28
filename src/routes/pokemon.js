@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
@@ -20,7 +21,6 @@ const Pokemon = (poke) => {
     setInput(e.target.value)
     pokedata = pokedata.filter((pokemon) => pokemon.name.english.toLowerCase().includes(input.toLowerCase()))
     setsearchResult(pokedata)
-  };
 
   // console.log(searchResult):
 
