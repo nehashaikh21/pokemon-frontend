@@ -1,14 +1,27 @@
 import ReactCardFlip from "react-card-flip";
 import React, {useState} from 'react';
 import '../AllCards.css';
-import { Link } from 'react-router-dom';
 import { Button } from "react-bootstrap";
+import PlayGround from "./PlayGround";
 
 export default function AllCards({ name, pokeid, data }) {
     const newData = [data].flat(2);
     const [isFlipped, setIsFlipped] = useState(false);
     const pokemon = newData.filter((e) => e.id === pokeid)
     console.log(pokemon)
+
+
+   
+    const [selected, setSelected] = useState('');
+    const handleClick= () =>{
+    const cardData=data.filter((object) => object.id== pokeid)
+    setSelected(cardData);
+    console.log(selected)
+    // alert('selected For fight');
+  
+    }
+
+
     return (
       <>
        <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
@@ -29,10 +42,11 @@ export default function AllCards({ name, pokeid, data }) {
                         </button>
                         <br />
                         <br />
-                        {/* <button className="btn btn-warning" onClick={event => handleClick(event, pokeid)} >Select Pokemon </button> */}
-                        <Button variant="warning" >
+                        <button className="btn btn-warning" onClick={event => handleClick(event, pokeid)} >Select Pokemon </button>
+                        <PlayGround data={selected} allpokedata={newData}/>
+                        {/* <Button variant="warning" >
                             <Link to={`/PlayGround/${pokeid}`} style={{ textDecoration: 'none', color: 'white' }} >Select Pokemon </Link>
-                        </Button>
+                        </Button> */}
                     </div>
                 </div>
             </div>
@@ -65,10 +79,11 @@ export default function AllCards({ name, pokeid, data }) {
                         <Button onClick={() => setIsFlipped((prev) => !prev)}>Back</Button>
                         <br />
                         <br />
-                        
-                        <Button variant="warning" >
+                        <button className="btn btn-warning" onClick={event => handleClick(event, pokeid)} >Select Pokemon </button>
+                        <PlayGround data={selected} allpokedata={newData}/>
+                        {/* <Button variant="warning" >
                             <Link to={`/PlayGround/${pokeid}`} style={{ textDecoration: 'none', color: 'white' }} >Select Pokemon </Link>
-                        </Button>
+                        </Button> */}
                     </div>
                 </div>
             </div>
