@@ -3,7 +3,7 @@ import './App.css';
 import Pokemon from "./routes/pokemon.js";
 import {Routes, Route} from 'react-router-dom';
 import PokeDetails from "./routes/pokedetails.js";
-import BaseInfo from "./routes/baseinfo.js";
+import PlayGround from "./routes/PlayGround.js";
 import Landingpage from "./routes/Landingpage";
 
 
@@ -32,8 +32,9 @@ function App() {
         <Route path="/pokemon" element={<Pokemon pokemon={pokemon} url={url}/>} />
         <Route path="/pokemon/:id" element={<PokeDetails pokemon={pokemon}/>} />
         <Route path="/pokemon/:name" element={<Pokemon pokemon={pokemon}/>} />
-        <Route path="/pokemon/:id/:info" element={<BaseInfo pokemon={pokemon} url={url}/>} />
-     </Routes>
+        <Route path="/PlayGround/:id/fight" element={<PlayGround pokemon={pokemon} />} />
+
+</Routes>
      
     </div>
   );

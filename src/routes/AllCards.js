@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 import '../AllCards.css';
 import { Button } from "react-bootstrap";
 import PlayGround from "./PlayGround";
+import { Link } from "react-router-dom";
 
 export default function AllCards({ name, pokeid, data }) {
     const newData = [data].flat(2);
@@ -42,11 +43,11 @@ export default function AllCards({ name, pokeid, data }) {
                         </button>
                         <br />
                         <br />
-                        <button className="btn btn-warning" onClick={event => handleClick(event, pokeid)} >Select Pokemon </button>
-                        <PlayGround data={selected} allpokedata={newData}/>
-                        {/* <Button variant="warning" >
-                            <Link to={`/PlayGround/${pokeid}`} style={{ textDecoration: 'none', color: 'white' }} >Select Pokemon </Link>
-                        </Button> */}
+                        <Button variant="warning"  onClick={event => handleClick(event, pokeid)}> 
+                         <Link to={`/PlayGround/${pokeid}/fight`} style={{ textDecoration: 'none', color: 'white' }} >Select Pokemon </Link>
+                         </Button>
+
+
                     </div>
                 </div>
             </div>
@@ -79,8 +80,13 @@ export default function AllCards({ name, pokeid, data }) {
                         <Button onClick={() => setIsFlipped((prev) => !prev)}>Back</Button>
                         <br />
                         <br />
-                        <button className="btn btn-warning" onClick={event => handleClick(event, pokeid)} >Select Pokemon </button>
-                        <PlayGround data={selected} allpokedata={newData}/>
+                        {/* <button className="btn btn-warning" onClick={event => handleClick(event, pokeid)} >Select Pokemon </button> */}
+
+                        <Button variant="warning"  onClick={event => handleClick(event, pokeid)}> 
+                         <Link to={{ pathname :'/PlayGround/${pokeid}', params:{alldata:newData}}}  style={{ textDecoration: 'none', color: 'white' }} >Select Pokemon </Link>
+                         </Button>
+
+                        {/* <PlayGround data={selected} allpokedata={newData}/> */}
                         {/* <Button variant="warning" >
                             <Link to={`/PlayGround/${pokeid}`} style={{ textDecoration: 'none', color: 'white' }} >Select Pokemon </Link>
                         </Button> */}
