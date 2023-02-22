@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
 const App = () => {
   const [pdata, setPdata] = useState(null);
   let { id } = useParams();
   useEffect(() => {
-    fetch(`https://pokemon3.herokuapp.com/pokemon/${id}`)
+    fetch(`https://pokemonbackend-aldo.onrender.com/pokemon/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setPdata(data);
@@ -31,9 +31,10 @@ const App = () => {
           <h4>HP:{pdata.base.HP}</h4>
           <h4>Attack:{pdata.base.Attack}</h4>
           <h4>Defense:{pdata.base.Defense}</h4>
-          <p><Link to={`/pokemon/${pdata.id}/baseinfo`}>View More</Link></p>
+          <p>
+            <Link to={`/pokemon/${pdata.id}/baseinfo`}>View More</Link>
+          </p>
         </div>
-       
       )}
     </div>
   );

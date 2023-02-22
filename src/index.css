@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
+  height: 100vh;
 }
 
 code {
@@ -70,4 +70,17 @@ h5{
 Link{
   text-decoration: none;
   color: white !important;
+}
+
+.selected-Opponent{
+  padding-top: 50%;
+}
+
+.playground{
+  margin: 5%;
+}
+
+.attack{
+  margin-top: 20%;
+  padding-left: 80%;
 }
